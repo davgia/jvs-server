@@ -1,0 +1,83 @@
+@media screen and (max-width: 420px){
+	.container {
+		font-size: 0.67em;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.container h1 {
+		font-size: 2em;
+	}
+	.jumbotron p {
+		font-size: 1.8em;
+	}
+}
+
+@media screen and (max-width: 500px){
+	#videoPlayer {
+		width: 100% !important;
+	}
+}
+
+@media screen and (max-width: 900px){
+	#videoPlayer {
+		width: 90% !important;
+	}
+}
+
+.jumbotron h1 {
+	text-align: center;
+}
+
+.outer-container {
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.5);
+	text-align: center;
+}
+
+.inner-container {
+	width: 100%;
+	margin: 60px auto auto auto;
+}
+
+.video-overlay {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin: 10px;
+	padding: 5px 5px;
+	font-size: 20px;
+	font-family: Helvetica;
+	color: #FFF;
+	background-color: rgba(50,50,50,0.3);
+}
+
+.button-close {
+	position: absolute;
+	right: 15px;
+	/*top: 15px;*/
+	font-size: 6em;
+	color: #202020;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+
+.button-close:hover {
+	color: #000;
+}
+
+#videoPlayer {
+	width: 80%;
+}
+
+#alertError {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	z-index: 9999;
+}

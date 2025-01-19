@@ -1,0 +1,40 @@
+{
+  "address": "",
+  "port": 8081,
+  "streamsPath": "assets/streams",
+  "assetsPath": "assets",
+  "remoteStreamsPath": "/content",
+  "remoteAssetsPath": "/app",
+  "remoteRootAPIPath": "/streams",
+  "ffmpegPath": "ffmpeg",
+  "ffprobePath": "ffprobe",
+  "announcePath": "listen",
+  "listeningPort": 5540,
+  "patterns": {
+    "progress": "\\s*(\\w+)\\s*=\\s*(\\S+)\\s*",
+    "success": "^\\s*video\\:\\S+\\s+audio\\:\\S+\\s+subtitle\\:\\S+\\s+global headers\\:\\S+.*$",
+    "duration": "(\\d+):(\\d+):(\\d+)\\.(\\d+)"
+  },
+  "defaults": {
+    "pixelFormat": "yuv720p",
+    "minSegmentDuration": "1000",
+    "h264Bitrate": "3500k",
+    "aacBitrate": "128k",
+    "chunkDuration": "1000",
+    "vp8Bitrate": "3000k",
+    "vorbisBitrate": "128k",
+    "vp9Bitrate": "2000k",
+    "opusBitrate": "64k"
+  },
+  "commands": {
+    "advOptFFmpeg": "-y -hide_banner -re -analyzeduration 32 -probesize 32",
+    "advOptMpegDash": "-use_template 1 -use_timeline 0 -utc_timing_url http://time.akamai.com/?iso",
+    "advOptH264": "-preset veryfast -x264opts slice-max-size=300:bframes=0:intra-refresh=1",
+    "advOptAac": "-ac 2",
+    "advOptWebmDash": "-time_shift_buffer_depth 7200 -minimum_update_period 7200 -utc_timing_url http://time.akamai.com/?iso",
+    "advOptVpx": "-speed 6 -tile-columns 4 -frame-parallel 1 -threads 4 -static-thresh 0 -max-intra-rate 300 -deadline realtime -lag-in-frames 0 -error-resilient 1",
+    "advOptOpus": "-sample_fmt s16 -ac 2",
+    "advOptVorbis": "-ac 2",
+    "advOptRtspServer": "-rtsp_flags listen -timeout 120"
+  }
+}

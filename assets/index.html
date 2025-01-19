@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JVS Web App</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.2.7/shaka-player.compiled.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+	<script src="app/script.js"></script>
+	<link rel="stylesheet" href="app/style.css">
+</head>
+<body>		
+<div class="container" role="main">
+	<div class="alert alert-danger alert-dismissible" id="alertError">
+		<a href="#" class="close">&times;</a>
+		<strong>Error!</strong><p id="alertText"></p>
+	</div>
+    <div class="jumbotron">
+        <h1>JVS - Web App</h1>
+    </div>
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Available streams:</h1>
+                <button id="btnRefresh" class="pull-right btn btn-primary">
+                    <span class="glyphicon glyphicon-refresh"></span> Refresh
+                </button>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+						<th>Live</th>
+						<th>Play</th>
+                    </tr>
+                    </thead>
+                    <tbody id="content">
+                    <!-- filled using Ajax -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+	<div class="outer-container">	
+		<a class="button-close">&times;</a>
+		<div class="inner-container">						
+			<!-- <div class="video-overlay"></div> -->
+			<video id="videoPlayer" controls></video>
+		</div>
+	</div>
+</div>
+</body>
+</html>
